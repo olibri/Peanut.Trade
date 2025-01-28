@@ -54,7 +54,6 @@ public class ExchangeAggregator(IExchangeRegistry exchangeRegistry) : IExchangeA
 
 
     #endregion
-
     public async Task<BestEstimateResponse> GetBestEstimateAsync(EstimateRequest request)
     {
         ValidateInputAmount(request);

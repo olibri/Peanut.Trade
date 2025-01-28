@@ -5,6 +5,10 @@ using Domain.Models.Records.ServiceDtos;
 
 namespace Infrastructure.Services.Exchanges;
 
+//For production,
+//it's better to use some cached responses
+//so you don't have to go after the result every time because it takes a long time.
+//This applies to two exchanges!!!
 public class BinanceService(HttpClient client, HashSet<string> userSupportedCurrencies)
     : BaseExchangeService(userSupportedCurrencies)
 {

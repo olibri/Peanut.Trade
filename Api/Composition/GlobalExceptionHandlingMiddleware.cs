@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.Diagnostics.Metrics;
+using System.Net;
 using System.Text.Json;
 using Domain.Exception;
 
@@ -18,6 +19,7 @@ public class GlobalExceptionHandlingMiddleware(RequestDelegate next)
         }
     }
 
+    //you could come up with something better instead of copy-pasting classes
     private static async Task HandleExceptionAsync(HttpContext context, Exception ex)
     {
         var code = HttpStatusCode.InternalServerError;
